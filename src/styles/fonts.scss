@@ -1,0 +1,14 @@
+/* monda-regular - latin */
+@font-face {
+  font-family: "Monda";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/monda-v10-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Monda Regular"), local("Monda-Regular"),
+    url("../assets/fonts/monda-v10-latin-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../assets/fonts/monda-v10-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../assets/fonts/monda-v10-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("../assets/fonts/monda-v10-latin-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../assets/fonts/monda-v10-latin-regular.svg#Monda")
+      format("svg"); /* Legacy iOS */
+}
