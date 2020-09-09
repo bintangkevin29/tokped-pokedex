@@ -1,0 +1,13 @@
+$colorPrimary: #db5073;
+$colorSecondary: #e94560;
+$colorTertiary: #0f3460;
+$colorQuaternary: #16213e;
+$colorQuinary: #eeeeee;
+
+$theme-colors: (
+  "primary": $colorPrimary,
+  "secondary": $colorSecondary,
+  "tertiary": $colorTertiary,
+  "quaternary": $colorQuaternary,
+  "quinary": $colorQuinary,
+);
