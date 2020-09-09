@@ -11,15 +11,15 @@
     color: #fff;
   }
   &__menuItems {
-    font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
     border-radius: 5px;
-    transition: backround-color 0.2s ease;
+    transition: all 0.2s ease;
     &--selected {
-      background-color: rgba($color: #000000, $alpha: 0.1);
+      font-weight: 700;
+      background: rgba($color: #000000, $alpha: 0.1);
     }
   }
 }
