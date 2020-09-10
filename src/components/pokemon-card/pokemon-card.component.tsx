@@ -1,7 +1,6 @@
 import React, { useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Axios from "axios";
 
 import { NamedApiResources } from "../../global";
 
@@ -11,6 +10,7 @@ import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
 import TypeCard from "../type-card";
 
 import "./pokemon-card.style.scss";
+import { fetchPokemonData } from "../../lib/utils";
 
 interface Props {
   pokemonData: NamedApiResources;
@@ -23,8 +23,8 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
 
   useEffect(() => {
     const fetchPokemonDetail = async () => {
-      const res = await Axios(pokemonData.url);
-      dispatch(addPokemonDetails(res.data));
+      const res = await fetchPokemonData(pokemonData.name);
+      dispatch(addPokemonDetails(res));
     };
     if (!pokemonDetails) {
       fetchPokemonDetail();

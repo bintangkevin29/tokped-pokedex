@@ -8,7 +8,8 @@ export interface PokemonList {
   name: string;
   url: string;
   owned: boolean;
-  detail?: PokemonDetails;
+  details?: PokemonDetails;
+  species?: PokemonSpecies;
 }
 
 export type PokemonActions =
@@ -18,12 +19,17 @@ export type PokemonActions =
     }
   | {
       type: "POKEMON_POKEDEX_DETAIL_ADD";
-      payload: PokemonDetails;
+      payload: PokemonFetchedData;
     };
+
+export interface PokemonFetchedData {
+  details: PokemonDetails;
+  species: PokemonSpecies;
+}
 
 export interface PokemonDetails {
   abilities: {
-    ability: NamedApiResources[];
+    ability: NamedApiResources;
     is_hidden: boolean;
     slot: number;
   }[];
@@ -78,4 +84,56 @@ export interface PokemonDetails {
     type: NamedApiResources;
   }[];
   weight: number;
+}
+
+interface PokemonSpecies {
+  base_happiness: number;
+  capture_rate: number;
+  color: NamedApiResources;
+  egg_groups: NamedApiResources[];
+  evolution_chain: {
+    url: string;
+  };
+  evolves_from_species: NamedApiResources | null;
+  flavor_text_entries: {
+    flavor_text: string;
+    language: NamedApiResources;
+    version: NamedApiResources;
+  }[];
+  form_descriptions: [];
+  forms_switchable: boolean;
+  gender_rate: number;
+  genera: {
+    genus: string;
+    language: NamedApiResources;
+  }[];
+  generation: NamedApiResources;
+  growth_rate: NamedApiResources;
+  habitat: NamedApiResources;
+  has_gender_differences: boolean;
+  hatch_counter: number;
+  id: number;
+  is_baby: boolean;
+  is_legendary: boolean;
+  is_mythical: boolean;
+  name: string;
+  names: {
+    language: NamedApiResources;
+    name: string;
+  }[];
+  order: number;
+  pal_park_encounters: {
+    area: NamedApiResources;
+    base_score: number;
+    rate: number;
+  }[];
+  pokedex_numbers: {
+    entry_number: number;
+    pokedex: NamedApiResources;
+  }[];
+  shape: NamedApiResources;
+  varieties: {
+    is_default: boolean;
+    pokemon: NamedApiResources;
+  }[];
 }

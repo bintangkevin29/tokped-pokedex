@@ -8,6 +8,13 @@ export const selectPokedex = createSelector([pokemonState], (pokemon) => pokemon
 export const selectPokemonByName = (name: string) => {
   return createSelector(
     [selectPokedex],
-    (pokemon) => pokemon.find((poke) => poke.name === name)?.detail
+    (pokemon) => pokemon.find((poke) => poke.name === name)?.details
+  );
+};
+
+export const selectPokemonSpeciesByName = (name: string) => {
+  return createSelector(
+    [selectPokedex],
+    (pokemon) => pokemon.find((p) => p.name === name)?.species
   );
 };

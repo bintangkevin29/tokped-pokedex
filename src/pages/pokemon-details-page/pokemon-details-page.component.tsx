@@ -4,22 +4,24 @@ import "./pokemon-details-page.style.scss";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
-import Axios from "axios";
 import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
-import { baseUrl } from "../../lib/constant";
 import CustomSpinner from "../../components/custom-spinner";
 import PokemonBanner from "../../components/pokemon-banner";
 import PokemonData from "../../components/pokemon-data";
+import { fetchPokemonData } from "../../lib/utils";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();
   const { name } = useParams();
+
   const pokemonDetails = useSelector(selectPokemonByName(name));
+
   useEffect(() => {
     const fetchPokemonDetail = async () => {
-      const res = await Axios(`${baseUrl}/pokemon/${name}`);
-      dispatch(addPokemonDetails(res.data));
+      const res = await fetchPokemonData(name);
+      dispatch(addPokemonDetails(res));
     };
+
     if (!pokemonDetails) {
       fetchPokemonDetail();
     }
