@@ -2,7 +2,6 @@ import { PokemonActions, PokemonState } from "./pokemons";
 
 const INIT_STATE: PokemonState = {
   pokedex: [],
-  myPokemons: [],
 };
 
 const pokemonReducer = (state = INIT_STATE, action: PokemonActions): PokemonState => {

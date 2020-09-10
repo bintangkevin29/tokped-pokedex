@@ -2,12 +2,13 @@ import { NamedApiResources } from "../../global";
 
 export interface PokemonState {
   pokedex: PokemonList[];
-  myPokemons: PokemonList[];
 }
 
 export interface PokemonList {
   name: string;
   url: string;
+  owned: boolean;
+  detail?: PokemonDetails;
 }
 
 export type PokemonActions = {
