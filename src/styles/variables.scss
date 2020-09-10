@@ -4,10 +4,142 @@ $colorTertiary: #0f3460;
 $colorQuaternary: #16213e;
 $colorQuinary: #eeeeee;
 
+$textBlack: rgba(
+  $color: #000000,
+  $alpha: 0.7,
+);
+
+$bug: #a8b820;
+$dark: #705848;
+$dragon: #7038f8;
+$electric: #f8d030;
+$fairy: #ee99ac;
+$fighting: #c03028;
+$fire: #f08030;
+$flying: #a890f0;
+$ghost: #705898;
+$grass: #78c850;
+$ground: #e0c068;
+$ice: #98d8d8;
+$normal: #a8a878;
+$posion: #a040a0;
+$psychic: #f85888;
+$rock: #b8a038;
+$steel: #b8b8d0;
+$water: #6890f0;
+
 $theme-colors: (
   "primary": $colorPrimary,
   "secondary": $colorSecondary,
   "tertiary": $colorTertiary,
   "quaternary": $colorQuaternary,
   "quinary": $colorQuinary,
+  "bug": $bug,
+  "dark": $dark,
+  "dragon": $dragon,
+  "electric": $electric,
+  "fairy": $fairy,
+  "fighting": $fighting,
+  "fire": $fire,
+  "flying": $flying,
+  "ghost": $ghost,
+  "grass": $grass,
+  "ground": $ground,
+  "ice": $ice,
+  "normal": $normal,
+  "posion": $posion,
+  "psychic": $psychic,
+  "rock": $rock,
+  "steel": $steel,
+  "water": $water,
+  "bug-light":
+    rgba(
+      $color: $bug,
+      $alpha: 0.4,
+    ),
+  "dark-light":
+    rgba(
+      $color: $dark,
+      $alpha: 0.4,
+    ),
+  "dragon-light":
+    rgba(
+      $color: $dragon,
+      $alpha: 0.4,
+    ),
+  "electric-light":
+    rgba(
+      $color: $electric,
+      $alpha: 0.4,
+    ),
+  "fairy-light":
+    rgba(
+      $color: $fairy,
+      $alpha: 0.4,
+    ),
+  "fighting-light":
+    rgba(
+      $color: $fighting,
+      $alpha: 0.4,
+    ),
+  "fire-light":
+    rgba(
+      $color: $fire,
+      $alpha: 0.4,
+    ),
+  "flying-light":
+    rgba(
+      $color: $flying,
+      $alpha: 0.4,
+    ),
+  "ghost-light":
+    rgba(
+      $color: $ghost,
+      $alpha: 0.4,
+    ),
+  "grass-light":
+    rgba(
+      $color: $grass,
+      $alpha: 0.4,
+    ),
+  "ground-light":
+    rgba(
+      $color: $ground,
+      $alpha: 0.4,
+    ),
+  "ice-light":
+    rgba(
+      $color: $ice,
+      $alpha: 0.4,
+    ),
+  "normal-light":
+    rgba(
+      $color: $normal,
+      $alpha: 0.4,
+    ),
+  "posion-light":
+    rgba(
+      $color: $posion,
+      $alpha: 0.4,
+    ),
+  "psychic-light":
+    rgba(
+      $color: $psychic,
+      $alpha: 0.4,
+    ),
+  "rock-light":
+    rgba(
+      $color: $rock,
+      $alpha: 0.4,
+    ),
+  "steel-light":
+    rgba(
+      $color: $steel,
+      $alpha: 0.5,
+    ),
+  "water-light":
+    rgba(
+      $color: $water,
+      $alpha: 0.4,
+    ),
 );

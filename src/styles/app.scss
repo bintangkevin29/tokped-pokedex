@@ -1,8 +1,10 @@
+@import "./variables.scss";
 @import "~bootstrap/scss/bootstrap";
 @import "./fonts.scss";
 
 body {
   font-family: "Monda", "sans-serif";
+  padding-bottom: 75px;
 }
 
 a {
