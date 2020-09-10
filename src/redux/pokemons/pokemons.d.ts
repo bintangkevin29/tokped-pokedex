@@ -11,10 +11,15 @@ export interface PokemonList {
   detail?: PokemonDetails;
 }
 
-export type PokemonActions = {
-  type: "POKEMON_POKEDEX_APPEND";
-  payload: PokemonList[];
-};
+export type PokemonActions =
+  | {
+      type: "POKEMON_POKEDEX_APPEND";
+      payload: PokemonList[];
+    }
+  | {
+      type: "POKEMON_POKEDEX_DETAIL_ADD";
+      payload: PokemonDetails;
+    };
 
 export interface PokemonDetails {
   abilities: {

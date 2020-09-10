@@ -3,25 +3,33 @@ import React, { useState, useEffect, Fragment } from "react";
 import "./pokemon-card.style.scss";
 import useFetch from "../../lib/use-fetch";
 
-import "./pokemon-card.style.scss";
 import { PokemonDetails } from "../../redux/pokemons/pokemons";
 import TypeCard from "../type-card";
+import { NamedApiResources } from "../../global";
+import { useSelector, useDispatch } from "react-redux";
+import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+import Axios from "axios";
+import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
 
 interface Props {
-  pokemonDetailUrl: string;
+  pokemonData: NamedApiResources;
 }
 
-const PokemonCard: React.FC<Props> = ({ pokemonDetailUrl }) => {
-  const [pokemonDetails, setPokemonDetails] = useState<PokemonDetails | undefined>(undefined);
+const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
+  const pokemonDetails = useSelector(selectPokemonByName(pokemonData.name));
 
-  const pokemonFetch = useFetch(pokemonDetailUrl);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!pokemonDetails && pokemonFetch.response) {
-      setPokemonDetails(pokemonFetch.response);
+    const fetchPokemonDetail = async () => {
+      const res = await Axios(pokemonData.url);
+      dispatch(addPokemonDetails(res.data));
+    };
+    if (!pokemonDetails) {
+      fetchPokemonDetail();
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pokemonFetch]);
+  }, []);
 
   return (
     <div
