@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.pokemonBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  color: $textBlack;
+  &__image {
+    height: 150px;
+    margin-bottom: 20px;
+  }
+  &__orderNumber {
+    font-size: 15px;
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: capitalize;
+  }
+  &__types {
+    display: flex;
+    flex-direction: row;
+  }
+}

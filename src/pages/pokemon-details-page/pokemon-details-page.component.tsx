@@ -8,6 +8,7 @@ import Axios from "axios";
 import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
 import { baseUrl } from "../../lib/constant";
 import CustomSpinner from "../../components/custom-spinner";
+import PokemonBanner from "../../components/pokemon-banner";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,9 +22,15 @@ const PokemonDetailsPage: React.FC = () => {
     if (!pokemonDetails) {
       fetchPokemonDetail();
     }
+
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return pokemonDetails ? <div className="pokemonDetailsPage">Tes</div> : <CustomSpinner />;
+  return (
+    <div className="pokemonDetailsPage">
+      {pokemonDetails ? <PokemonBanner pokemonName={pokemonDetails.name} /> : <CustomSpinner />}
+    </div>
+  );
 };
 
 export default PokemonDetailsPage;
