@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { BiFemaleSign, BiMaleSign } from "react-icons/bi";
 
 import {
   selectPokemonByName,
@@ -18,7 +19,6 @@ const About: React.FC = () => {
 
   return (
     <div className="about">
-
       <span className="about__description">
         "{pokemonSpecies?.flavor_text_entries[0].flavor_text}"
       </span>
@@ -55,13 +55,17 @@ const About: React.FC = () => {
       <Table className="about__table" borderless>
         <tbody>
           <tr>
-            <td className="about__dataName">Gender Distribution</td>
+            <td className="about__dataName">Gender</td>
             <td className="about__dataDescription">
-              {pokemonSpecies &&
-                (pokemonSpecies?.gender_rate / 8) * 100 +
-                  "% Female, " +
-                  ((8 - pokemonSpecies?.gender_rate) / 8) * 100 +
-                  "% Male"}
+              {pokemonSpecies && (
+                <Fragment>
+                  {(pokemonSpecies?.gender_rate / 8) * 100 + "%"}
+                  <BiFemaleSign className="text-psychic" />
+                  {", "}
+                  {((8 - pokemonSpecies?.gender_rate) / 8) * 100 + "%"}
+                  <BiMaleSign className="text-water" />
+                </Fragment>
+              )}
             </td>
           </tr>
           <tr>
@@ -72,7 +76,6 @@ const About: React.FC = () => {
           </tr>
         </tbody>
       </Table>
-
     </div>
   );
 };

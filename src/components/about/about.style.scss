@@ -18,6 +18,11 @@
   }
   &__dataDescription {
     text-transform: capitalize;
+    vertical-align: middle!important;
+    svg{
+      vertical-align: unset;
+      margin-left: 3px;
+    }
   }
   &__header {
     font-weight: 700;
