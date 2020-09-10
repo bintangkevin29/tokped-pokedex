@@ -22,7 +22,7 @@ $grass: #78c850;
 $ground: #e0c068;
 $ice: #98d8d8;
 $normal: #a8a878;
-$posion: #a040a0;
+$poison: #a040a0;
 $psychic: #f85888;
 $rock: #b8a038;
 $steel: #b8b8d0;
@@ -47,7 +47,7 @@ $theme-colors: (
   "ground": $ground,
   "ice": $ice,
   "normal": $normal,
-  "posion": $posion,
+  "poison": $poison,
   "psychic": $psychic,
   "rock": $rock,
   "steel": $steel,
@@ -117,9 +117,9 @@ $theme-colors: (
       $color: $normal,
       $alpha: 0.4,
     ),
-  "posion-light":
+  "poison-light":
     rgba(
-      $color: $posion,
+      $color: $poison,
       $alpha: 0.4,
     ),
   "psychic-light":
