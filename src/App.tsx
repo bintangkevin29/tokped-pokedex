@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Route, useLocation } from "react-router-dom";
+import { Route, useLocation, useHistory } from "react-router-dom";
 
 import { selectModules } from "./redux/modules/modules.selector";
 
@@ -16,6 +16,8 @@ import { appendPokedexList } from "./redux/pokemons/pokemons.actions";
 function App() {
   const modules = useSelector(selectModules);
   const pokedexPokemons = useSelector(selectPokedex);
+
+  const history = useHistory();
 
   const location = useLocation();
 
@@ -51,6 +53,16 @@ function App() {
 
     return () => window.removeEventListener("scroll", whenScrolledToBottom);
   });
+
+  useEffect(() => {
+    const unlisten = history.listen(() => {
+      window.scrollTo(0, 0);
+    });
+    return () => {
+      unlisten();
+    };
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="App">
