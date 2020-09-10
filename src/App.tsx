@@ -53,9 +53,9 @@ function App() {
 
   return (
     <div className="App">
-      <Route exact path={modules.map((module) => module.url)}>
+      <Route exact path={modules.main.map((module) => module.url)}>
         <TopBanner />
-        {modules.map((module, i) => (
+        {modules.main.map((module, i) => (
           <Route
             key={i}
             exact

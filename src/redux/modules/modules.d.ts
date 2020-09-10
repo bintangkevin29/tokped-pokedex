@@ -1,5 +1,8 @@
 interface ModulesState {
-  modules: Modules[];
+  modules: {
+    main: Modules[];
+    others: Modules[];
+  };
 }
 
 interface Modules {

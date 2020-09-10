@@ -12,7 +12,7 @@ const TopBanner: React.FC = () => {
   const location = useLocation();
 
   const modules = useSelector(selectModules);
-  const currentModule = modules.find((module) => module.url === location.pathname);
+  const currentModule = modules.main.find((module) => module.url === location.pathname);
 
   return (
     <div className="topBanner">

@@ -16,7 +16,7 @@ const BottomNav: React.FC = () => {
     <div className="bottomNav">
       <Container fluid className="bottomNav__inner">
         <Row className="bottomNav__menu">
-          {modules.map((module, i) => (
+          {modules.main.map((module, i) => (
             <Col xs={6} key={i}>
               <Link
                 to={module.url}
