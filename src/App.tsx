@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 
 import { selectModules } from "./redux/modules/modules.selector";
 
@@ -16,6 +16,8 @@ import { appendPokedexList } from "./redux/pokemons/pokemons.actions";
 function App() {
   const modules = useSelector(selectModules);
   const pokedexPokemons = useSelector(selectPokedex);
+
+  const location = useLocation();
 
   const dispatch = useDispatch();
 
@@ -43,7 +45,7 @@ function App() {
       }
     };
 
-    if (!pokedexList.fetching) {
+    if (!pokedexList.fetching && location.pathname === "/") {
       window.addEventListener("scroll", whenScrolledToBottom, { passive: true });
     }
 
