@@ -9,6 +9,7 @@ import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
 import { baseUrl } from "../../lib/constant";
 import CustomSpinner from "../../components/custom-spinner";
 import PokemonBanner from "../../components/pokemon-banner";
+import PokemonData from "../../components/pokemon-data";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,8 +31,8 @@ const PokemonDetailsPage: React.FC = () => {
     <div className="pokemonDetailsPage">
       {pokemonDetails ? (
         <Fragment>
-          <PokemonBanner/>
-
+          <PokemonBanner />
+          <PokemonData />
         </Fragment>
       ) : (
         <CustomSpinner />
