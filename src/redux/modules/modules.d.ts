@@ -5,4 +5,5 @@ interface ModulesState {
 interface Modules {
   name: string;
   url: string;
+  component: React.FC;
 }

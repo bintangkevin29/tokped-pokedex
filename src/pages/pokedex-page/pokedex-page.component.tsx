@@ -3,7 +3,7 @@ import React from "react";
 import "./pokedex-page.style.scss";
 import { Container } from "react-bootstrap";
 
-const PokemonListPage: React.FC = () => {
+const PokedexPage: React.FC = () => {
   return (
     <section className="pokedex">
       <Container>Test</Container>
@@ -11,4 +11,4 @@ const PokemonListPage: React.FC = () => {
   );
 };
 
-export default PokemonListPage;
+export default PokedexPage;
