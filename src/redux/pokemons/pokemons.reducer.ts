@@ -1,3 +1,5 @@
+import { PokemonActions, PokemonState } from "./pokemons";
+
 const INIT_STATE: PokemonState = {
   pokedex: [],
   myPokemons: [],
@@ -8,7 +10,7 @@ const pokemonReducer = (state = INIT_STATE, action: PokemonActions): PokemonStat
     case "POKEMON_POKEDEX_APPEND":
       return {
         ...state,
-        pokedex: action.payload,
+        pokedex: [...state.pokedex, ...action.payload],
       };
     default:
       return state;

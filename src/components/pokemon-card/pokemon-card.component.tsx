@@ -41,7 +41,7 @@ const PokemonCard: React.FC<Props> = ({ pokemonDetailUrl }) => {
             </div>
           </div>
           <div className="pokemonCard__sprite">
-            <img alt="" src={pokemonDetails.sprites.front_default}></img>
+            <img className='pokemonCard__pokemonSprite' alt="" src={pokemonDetails.sprites.front_default}></img>
             <img
               className="pokemonCard__backgroundImage"
               alt=""

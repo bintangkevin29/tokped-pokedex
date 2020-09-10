@@ -1,4 +1,5 @@
 import PokedexPage from "../../pages/pokedex-page";
+import BottomNav from "../../components/bottom-nav";
 
 const INIT_STATE: ModulesState = {
   modules: [
@@ -10,7 +11,7 @@ const INIT_STATE: ModulesState = {
     {
       name: "My Pokèmons",
       url: "/my-pokemons",
-      component: PokedexPage,
+      component: BottomNav,
     },
   ],
 };
