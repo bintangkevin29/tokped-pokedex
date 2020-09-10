@@ -25,6 +25,7 @@ export type PokemonActions =
 export interface PokemonFetchedData {
   details: PokemonDetails;
   species: PokemonSpecies;
+  evolution: PokemonEvolution;
 }
 
 export interface PokemonDetails {
