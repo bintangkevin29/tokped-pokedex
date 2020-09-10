@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 
 import About from "../about";
+import Stats from "../stats";
 
 import "./pokemon-data.style.scss";
-import { Container } from "react-bootstrap";
+
 
 const PokemonData: React.FC = () => {
   const [mode, setMode] = useState("about");
@@ -30,6 +32,8 @@ const PokemonData: React.FC = () => {
             switch (mode) {
               case "about":
                 return <About />;
+              case "stats":
+                return <Stats />;
               default:
             }
           })()}
