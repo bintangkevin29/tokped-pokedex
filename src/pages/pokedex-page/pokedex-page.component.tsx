@@ -1,11 +1,11 @@
 import React from "react";
 
-import "./pokemon-list-page.style.scss";
+import "./pokedex-page.style.scss";
 import { Container } from "react-bootstrap";
 
 const PokemonListPage: React.FC = () => {
   return (
-    <section className="pokemonList">
+    <section className="pokedex">
       <Container>Test</Container>
     </section>
   );
