@@ -3,8 +3,16 @@ const INIT_STATE: PokemonState = {
   myPokemons: [],
 };
 
-const pokemonReducer = (state = INIT_STATE) => {
-  return state;
+const pokemonReducer = (state = INIT_STATE, action: PokemonActions): PokemonState => {
+  switch (action.type) {
+    case "POKEMON_POKEDEX_APPEND":
+      return {
+        ...state,
+        pokedex: action.payload,
+      };
+    default:
+      return state;
+  }
 };
 
 export default pokemonReducer;

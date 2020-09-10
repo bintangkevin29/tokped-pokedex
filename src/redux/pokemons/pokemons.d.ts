@@ -6,5 +6,9 @@ interface PokemonState {
 interface PokemonList {
   name: string;
   url: string;
-  detailed: boolean;
 }
+
+type PokemonActions = {
+  type: "POKEMON_POKEDEX_APPEND";
+  payload: PokemonList[];
+};
