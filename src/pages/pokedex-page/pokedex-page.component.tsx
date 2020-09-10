@@ -9,8 +9,9 @@ import useFetch from "../../lib/use-fetch";
 
 import PokemonList from "../../components/pokemon-list";
 
-import "./pokedex-page.style.scss";
 import { appendPokedexList } from "../../redux/pokemons/pokemons.actions";
+
+import "./pokedex-page.style.scss";
 
 const PokedexPage: React.FC = () => {
   const dispatch = useDispatch();
