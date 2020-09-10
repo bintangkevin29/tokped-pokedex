@@ -18,8 +18,8 @@ function App() {
         {modules.map((module) => (
           <Route exact path={module.url} />
         ))}
-        <BottomNav />
       </Route>
+      <BottomNav />
     </div>
   );
 }
