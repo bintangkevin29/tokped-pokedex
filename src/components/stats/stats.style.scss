@@ -1,4 +1,12 @@
 @import "../../styles/variables.scss";
 
 .stats {
+  &__inner {
+    align-items: center;
+  }
+  &__name {
+    text-transform: capitalize;
+    font-size: 14px;
+    padding: 10px 5px;
+  }
 }
