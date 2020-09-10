@@ -1,15 +1,16 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import Axios from "axios";
+
+import { NamedApiResources } from "../../global";
+
+import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
+
+import TypeCard from "../type-card";
 
 import "./pokemon-card.style.scss";
-import useFetch from "../../lib/use-fetch";
-
-import { PokemonDetails } from "../../redux/pokemons/pokemons";
-import TypeCard from "../type-card";
-import { NamedApiResources } from "../../global";
-import { useSelector, useDispatch } from "react-redux";
-import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
-import Axios from "axios";
-import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
 
 interface Props {
   pokemonData: NamedApiResources;
@@ -32,7 +33,8 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
   }, []);
 
   return (
-    <div
+    <Link
+      to={`/details/${pokemonDetails && pokemonDetails?.name}`}
       className={`pokemonCard ${
         pokemonDetails ? "bg-" + pokemonDetails.types[0].type.name + "-light" : ""
       }`}
@@ -62,7 +64,7 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
           </div>
         </Fragment>
       )}
-    </div>
+    </Link>
   );
 };
 

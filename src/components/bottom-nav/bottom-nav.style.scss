@@ -8,6 +8,7 @@
   left: 0;
   width: 100%;
   background-color: $colorPrimary;
+  z-index: 99;
   &__inner {
     padding: 15px!important;
     color: #fff;
