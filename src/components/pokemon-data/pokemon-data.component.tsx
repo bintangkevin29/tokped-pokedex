@@ -6,10 +6,9 @@ import Stats from "../stats";
 
 import "./pokemon-data.style.scss";
 
-
 const PokemonData: React.FC = () => {
   const [mode, setMode] = useState("about");
-  const modes = ["about", "stats", "evolution", "moves"];
+  const modes = ["about", "stats", "evolution"];
 
   return (
     <div className="pokemonData">
