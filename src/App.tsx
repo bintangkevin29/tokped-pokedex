@@ -19,7 +19,6 @@ function App() {
 
   const dispatch = useDispatch();
 
-
   const [offset, setOffset] = useState(0);
 
   const pokedexList = useFetch(`${baseUrl}/pokemon?limit=20&offset=${offset}`);
@@ -67,6 +66,16 @@ function App() {
           />
         ))}
       </Route>
+      {modules.others.map((module, i) => (
+        <Route
+          key={i}
+          path={module.url}
+          render={() => {
+            const Component = module.component;
+            return <Component />;
+          }}
+        />
+      ))}
       <BottomNav />
     </div>
   );

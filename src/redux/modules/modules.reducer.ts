@@ -19,7 +19,7 @@ const INIT_STATE: ModulesState = {
     others: [
       {
         name: "Pokèmon Details",
-        url: "/detail/:name",
+        url: "/details/:name",
         component: PokemonDetailsPage,
       },
     ],
