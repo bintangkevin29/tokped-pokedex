@@ -1,13 +1,14 @@
 import React from "react";
-
-import "./about.style.scss";
+import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 import {
   selectPokemonByName,
   selectPokemonSpeciesByName,
 } from "../../redux/pokemons/pokemons.selector";
+
+import "./about.style.scss";
 
 const About: React.FC = () => {
   const { name } = useParams();
@@ -17,9 +18,11 @@ const About: React.FC = () => {
 
   return (
     <div className="about">
+
       <span className="about__description">
         "{pokemonSpecies?.flavor_text_entries[0].flavor_text}"
       </span>
+
       <Table className="about__table" borderless>
         <tbody>
           <tr>
@@ -46,7 +49,9 @@ const About: React.FC = () => {
           </tr>
         </tbody>
       </Table>
+
       <span className="about__header">Breeding</span>
+
       <Table className="about__table" borderless>
         <tbody>
           <tr>
@@ -67,6 +72,7 @@ const About: React.FC = () => {
           </tr>
         </tbody>
       </Table>
+
     </div>
   );
 };
