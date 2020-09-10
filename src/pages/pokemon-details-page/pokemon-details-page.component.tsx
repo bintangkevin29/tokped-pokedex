@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 
 import "./pokemon-details-page.style.scss";
 import { useParams } from "react-router-dom";
@@ -28,7 +28,14 @@ const PokemonDetailsPage: React.FC = () => {
 
   return (
     <div className="pokemonDetailsPage">
-      {pokemonDetails ? <PokemonBanner pokemonName={pokemonDetails.name} /> : <CustomSpinner />}
+      {pokemonDetails ? (
+        <Fragment>
+          <PokemonBanner/>
+
+        </Fragment>
+      ) : (
+        <CustomSpinner />
+      )}
     </div>
   );
 };

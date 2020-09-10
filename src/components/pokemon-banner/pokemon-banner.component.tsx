@@ -1,17 +1,20 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+
+import TypeCard from "../type-card";
 
 import "./pokemon-banner.style.scss";
-import { useSelector } from "react-redux";
-import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
-import TypeCard from "../type-card";
 
 interface Props {
   className?: string;
-  pokemonName: string;
 }
 
-const PokemonBanner: React.FC<Props> = ({ className, pokemonName }) => {
-  const pokemonDetails = useSelector(selectPokemonByName(pokemonName));
+const PokemonBanner: React.FC<Props> = ({ className }) => {
+  const { name } = useParams();
+  const pokemonDetails = useSelector(selectPokemonByName(name));
   return (
     <div className={`pokemonBanner bg-${pokemonDetails?.types[0].type.name}-light`}>
       <img
