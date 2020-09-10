@@ -25,14 +25,14 @@ function App() {
 
   const [offset, setOffset] = useState(0);
 
-  const pokedexList = useFetch(`${baseUrl}/pokemon?limit=20&offset=${offset}`);
+  const pokedexList = useFetch(`${baseUrl}/pokemon?limit=10&offset=${offset}`);
 
   const offsetAdd = () => {
-    setOffset(offset + 20);
+    setOffset(offset + 10);
   };
 
   useEffect(() => {
-    if (pokedexPokemons.length < 20 + offset && pokedexList.response) {
+    if (pokedexPokemons.length < 10 + offset && pokedexList.response) {
       console.log("jalan");
       dispatch(appendPokedexList(pokedexList.response.results));
     }
