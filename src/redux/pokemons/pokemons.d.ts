@@ -137,3 +137,49 @@ interface PokemonSpecies {
     pokemon: NamedApiResources;
   }[];
 }
+
+interface PokemonEvolution {
+  baby_trigger_item: NamedApiResources | null;
+  chain: {
+    evolution_details: [];
+    evolves_to: [
+      {
+        evolution_details: EvolutionDetails[];
+        evolves_to: [
+          {
+            evolution_details: EvolutionDetails[];
+            evolves_to: [];
+            is_baby: boolean;
+            species: NamedApiResources;
+          }
+        ];
+        is_baby: boolean;
+        species: NamedApiResources;
+      }
+    ];
+    is_baby: boolean;
+    species: NamedApiResources;
+  };
+  id: 1;
+}
+
+interface EvolutionDetails {
+  gender: number;
+  held_item: NamedApiResources | null;
+  item: NamedApiResources | null;
+  known_move: NamedApiResources | null;
+  known_move_type: NamedApiResources | null;
+  location: NamedApiResources | null;
+  min_affection: number;
+  min_beauty: number;
+  min_happiness: number;
+  min_level: number;
+  needs_overworld_rain: boolean;
+  party_species: NamedApiResources | null;
+  party_type: NamedApiResources | null;
+  relative_physical_stats: number;
+  time_of_day: string;
+  trade_species: NamedApiResources | null;
+  trigger: NamedApiResources | null;
+  turn_upside_down: boolean;
+}
