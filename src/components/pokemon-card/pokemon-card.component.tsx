@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from "react";
 
 import "./pokemon-card.style.scss";
 import useFetch from "../../lib/use-fetch";
-import CustomSpinner from "../custom-spinner";
 
 import "./pokemon-card.style.scss";
 import { PokemonDetails } from "../../redux/pokemons/pokemons";
@@ -20,6 +19,7 @@ const PokemonCard: React.FC<Props> = ({ pokemonDetailUrl }) => {
     if (!pokemonDetails && pokemonFetch.response) {
       setPokemonDetails(pokemonFetch.response);
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pokemonFetch]);
 
   return (
