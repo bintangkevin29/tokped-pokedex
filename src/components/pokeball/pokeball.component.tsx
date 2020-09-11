@@ -26,8 +26,8 @@ const Pokeball: React.FC = () => {
 
   const currentPokemon = useSelector(selectPokemonByName(name));
 
-  const [modalShow, setModalShow] = useState<boolean>(true);
-  const [catchSuccess, setCatchSuccess] = useState<boolean>(true);
+  const [modalShow, setModalShow] = useState<boolean>(false);
+  const [catchSuccess, setCatchSuccess] = useState<boolean>(false);
   const [nickname, setNickname] = useState<string>("");
 
   const dispatchStartCatch = () => {
