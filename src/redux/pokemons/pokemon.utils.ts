@@ -18,7 +18,6 @@ export const insertPokemonDetails = (
       ...oldState,
       {
         name: incomingDetails.details.name,
-        owned: false,
         url: `${baseUrl}/pokemon/${incomingDetails.details.name}`,
         ...incomingDetails,
       },

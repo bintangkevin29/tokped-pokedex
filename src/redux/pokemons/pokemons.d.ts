@@ -8,10 +8,13 @@ export interface PokemonState {
 export interface PokemonList {
   name: string;
   url: string;
-  owned: boolean;
   details?: PokemonDetails;
   species?: PokemonSpecies;
   evolution?: PokemonEvolution;
+}
+
+export interface MyPokemonState extends PokemonList {
+  nickname: string;
 }
 
 export type PokemonActions =

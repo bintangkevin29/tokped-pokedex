@@ -10,14 +10,24 @@ import {
   stopCatchMode,
 } from "../../redux/catch/catch.actions";
 import { Modal, Form, FormControl, Button } from "react-bootstrap";
+import { useHistory, useParams } from "react-router-dom";
+import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+import { appendMyPokemonList } from "../../redux/pokemons/pokemons.actions";
 
 const Pokeball: React.FC = () => {
   const dispatch = useDispatch();
 
   const catchState = useSelector(selectCatch);
 
+  const history = useHistory();
+
+  const { name } = useParams();
+
+  const currentPokemon = useSelector(selectPokemonByName(name));
+
   const [modalShow, setModalShow] = useState<boolean>(true);
   const [catchSuccess, setCatchSuccess] = useState<boolean>(true);
+  const [nickname, setNickname] = useState<string>("");
 
   const dispatchStartCatch = () => {
     dispatch(beginCatchMode());
@@ -32,6 +42,20 @@ const Pokeball: React.FC = () => {
   const initiateCatch = () => {
     if (!catchState.catchReady) {
       dispatchStartCatch();
+    }
+  };
+
+  const addMyPokemon = (e: React.FormEvent) => {
+    if (currentPokemon) {
+      e.preventDefault();
+      dispatch(
+        appendMyPokemonList({
+          nickname: nickname,
+          name: currentPokemon?.name,
+          url: currentPokemon?.url,
+        })
+      );
+      history.push("/my-pokemons");
     }
   };
 
@@ -79,13 +103,15 @@ const Pokeball: React.FC = () => {
             "The Pokèmon got away!"
           ) : (
             <Fragment>
-              <Form>
+              <Form onSubmit={addMyPokemon}>
                 <Form.Group>
                   <Form.Label>Give a nickname to your new friend!</Form.Label>
-                  <FormControl />
+                  <FormControl onChange={(e) => setNickname(e.target.value)} />
                 </Form.Group>
                 <Form.Group>
-                  <Button block type="submit">Submit</Button>
+                  <Button block type="submit">
+                    Submit
+                  </Button>
                 </Form.Group>
               </Form>
             </Fragment>

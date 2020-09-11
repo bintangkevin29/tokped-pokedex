@@ -1,4 +1,4 @@
-import { PokemonList, PokemonActions, PokemonFetchedData } from "./pokemons";
+import { PokemonList, PokemonActions, PokemonFetchedData, MyPokemonState } from "./pokemons";
 
 export const appendPokedexList = (data: PokemonList[]): PokemonActions => {
   const modifiedData = data.map((dt) => ({ ...dt, owned: false }));
@@ -13,7 +13,7 @@ export const addPokemonDetails = (data: PokemonFetchedData): PokemonActions => (
   payload: data,
 });
 
-export const appendMyPokemonList = (data: PokemonList): PokemonActions => ({
+export const appendMyPokemonList = (data: MyPokemonState): PokemonActions => ({
   type: "POKEMON_MYPOKEMON_APPEND",
   payload: data,
 });
