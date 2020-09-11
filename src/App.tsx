@@ -12,6 +12,7 @@ import { selectPokedex } from "./redux/pokemons/pokemons.selector";
 import useFetch from "./lib/use-fetch";
 import { baseUrl } from "./lib/constant";
 import { appendPokedexList } from "./redux/pokemons/pokemons.actions";
+import { stopCatchMode, stopCatching } from "./redux/catch/catch.actions";
 
 function App() {
   const modules = useSelector(selectModules);
@@ -63,6 +64,11 @@ function App() {
     };
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    dispatch(stopCatchMode());
+    dispatch(stopCatching());
+  }, [location]);
 
   return (
     <div className="App">
