@@ -147,22 +147,8 @@ interface PokemonEvolution {
 }
 
 interface EvolutionChain {
-  evolution_details: [];
-  evolves_to: [
-    {
-      evolution_details: EvolutionDetails[];
-      evolves_to: [
-        {
-          evolution_details: EvolutionDetails[];
-          evolves_to: [];
-          is_baby: boolean;
-          species: NamedApiResources;
-        }
-      ];
-      is_baby: boolean;
-      species: NamedApiResources;
-    }
-  ];
+  evolution_details: EvolutionDetails[] | [];
+  evolves_to: EvolutionChain[];
   is_baby: boolean;
   species: NamedApiResources;
 }
@@ -186,4 +172,11 @@ interface EvolutionDetails {
   trade_species: NamedApiResources | null;
   trigger: NamedApiResources | null;
   turn_upside_down: boolean;
+}
+
+export interface PokemonEvolutionNew {
+  url: string;
+  sprites: string;
+  name: string;
+  minLevel: int;
 }

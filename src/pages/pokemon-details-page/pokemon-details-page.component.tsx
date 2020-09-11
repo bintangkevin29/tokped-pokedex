@@ -22,12 +22,13 @@ const PokemonDetailsPage: React.FC = () => {
       dispatch(addPokemonDetails(res));
     };
 
-    if (!pokemonDetails) {
+    if (!pokemonDetails?.details || !pokemonDetails?.species) {
       fetchPokemonDetail();
     }
-
+    
+    
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [name]);
 
   return (
     <div className="pokemonDetailsPage">
