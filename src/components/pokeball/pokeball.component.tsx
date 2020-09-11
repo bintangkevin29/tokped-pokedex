@@ -73,6 +73,7 @@ const Pokeball: React.FC = () => {
         }
       }, 3000);
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [catchState.isCatching]);
 
   return (
