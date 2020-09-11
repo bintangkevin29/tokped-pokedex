@@ -13,7 +13,9 @@ const Pokeball: React.FC = () => {
   const catchState = useSelector(selectCatch);
 
   const initiateCatch = () => {
-    dispatch(beginCatchMode());
+    if (!catchState.catchReady) {
+      dispatch(beginCatchMode());
+    }
   };
 
   return (

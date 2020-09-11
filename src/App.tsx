@@ -68,6 +68,7 @@ function App() {
   useEffect(() => {
     dispatch(stopCatchMode());
     dispatch(stopCatching());
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   return (
