@@ -5,6 +5,7 @@ import About from "../about";
 import Stats from "../stats";
 
 import "./pokemon-data.style.scss";
+import Evolution from "../evolution";
 
 const PokemonData: React.FC = () => {
   const [mode, setMode] = useState("about");
@@ -33,6 +34,8 @@ const PokemonData: React.FC = () => {
                 return <About />;
               case "stats":
                 return <Stats />;
+              case "evolution":
+                return <Evolution />;
               default:
             }
           })()}
