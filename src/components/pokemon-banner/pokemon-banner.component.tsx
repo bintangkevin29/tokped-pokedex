@@ -22,14 +22,34 @@ const PokemonBanner: React.FC<Props> = ({ className }) => {
   const pokemonDetails = pokemon?.details;
 
   return (
-    <div className={`pokemonBanner ${catchState.catchReady && 'pokemonBanner--catchMode'} bg-${pokemonDetails?.types[0].type.name}-light`}>
-      {pokemonDetails && (
-        <img
-          className="pokemonBanner__image"
-          alt=""
-          src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails?.id}.png`}
-        />
-      )}
+    <div
+      className={`pokemonBanner ${catchState.catchReady && "pokemonBanner--catchMode"} bg-${
+        pokemonDetails?.types[0].type.name
+      }-light`}
+    >
+      <div className="pokemonBanner__imageContainer">
+        {pokemonDetails && (
+          <img
+            className={`pokemonBanner__image ${
+              catchState.isCatching && "pokemonBanner__image--catching"
+            }`}
+            alt=""
+            src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails?.id}.png`}
+          />
+        )}
+        <div className={`pokemonBanner__pokeballContainer ${catchState.catchReady && 'pokemonBanner__pokeballContainer--catching'}`}>
+          {catchState.catchReady && (
+            <img
+              className={`pokemonBanner__pokeballImage ${
+                catchState.isCatching && "pokemonBanner__pokeballImage--catching"
+              }`}
+              alt=""
+              src={require("../../assets/images/pokeball.svg")}
+            />
+          )}
+        </div>
+      </div>
+
       <span className="pokemonBanner__orderNumber">#{pokemonDetails?.order}</span>
       <span className="pokemonBanner__name">{pokemonDetails?.name}</span>
       <div className="pokemonBanner__types">
