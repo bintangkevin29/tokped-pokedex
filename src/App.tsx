@@ -43,7 +43,7 @@ function App() {
 
   useEffect(() => {
     const whenScrolledToBottom = () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
         offsetAdd();
       }
     };
