@@ -12,6 +12,7 @@ import PokemonBanner from "../../components/pokemon-banner";
 import PokemonData from "../../components/pokemon-data";
 
 import "./pokemon-details-page.style.scss";
+import Pokeball from "../../components/pokeball";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -28,8 +29,7 @@ const PokemonDetailsPage: React.FC = () => {
     if (!pokemonDetails?.details || !pokemonDetails?.species) {
       fetchPokemonDetail();
     }
-    
-    
+
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name]);
 
@@ -39,6 +39,7 @@ const PokemonDetailsPage: React.FC = () => {
         <Fragment>
           <PokemonBanner />
           <PokemonData />
+          <Pokeball />
         </Fragment>
       ) : (
         <CustomSpinner />
