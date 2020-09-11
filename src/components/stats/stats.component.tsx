@@ -9,7 +9,8 @@ import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 const Stats: React.FC = () => {
   const { name } = useParams();
 
-  const pokemonDetails = useSelector(selectPokemonByName(name));
+  const pokemon = useSelector(selectPokemonByName(name));
+  const pokemonDetails = pokemon?.details;
 
   return (
     <div className="stats">

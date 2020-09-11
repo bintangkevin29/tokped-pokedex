@@ -14,7 +14,10 @@ interface Props {
 
 const PokemonBanner: React.FC<Props> = ({ className }) => {
   const { name } = useParams();
-  const pokemonDetails = useSelector(selectPokemonByName(name));
+  const pokemon = useSelector(selectPokemonByName(name));
+
+  const pokemonDetails = pokemon?.details;
+  
   return (
     <div className={`pokemonBanner bg-${pokemonDetails?.types[0].type.name}-light`}>
       <img

@@ -17,7 +17,9 @@ interface Props {
 }
 
 const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
-  const pokemonDetails = useSelector(selectPokemonByName(pokemonData.name));
+  const pokemon = useSelector(selectPokemonByName(pokemonData.name));
+
+  const pokemonDetails = pokemon?.details;
 
   const dispatch = useDispatch();
 

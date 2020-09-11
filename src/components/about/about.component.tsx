@@ -4,18 +4,16 @@ import { Table } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { BiFemaleSign, BiMaleSign } from "react-icons/bi";
 
-import {
-  selectPokemonByName,
-  selectPokemonSpeciesByName,
-} from "../../redux/pokemons/pokemons.selector";
+import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 
 import "./about.style.scss";
 
 const About: React.FC = () => {
   const { name } = useParams();
 
-  const pokemonDetails = useSelector(selectPokemonByName(name));
-  const pokemonSpecies = useSelector(selectPokemonSpeciesByName(name));
+  const pokemon = useSelector(selectPokemonByName(name));
+  const pokemonSpecies = pokemon?.species;
+  const pokemonDetails = pokemon?.details;
 
   return (
     <div className="about">
