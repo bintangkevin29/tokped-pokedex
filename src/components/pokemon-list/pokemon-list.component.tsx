@@ -1,10 +1,11 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
+
+import { MyPokemons } from "../../redux/my-pokemons/my-pokemons";
+
+import PokemonCard from "../pokemon-card";
 
 import "./pokemon-list.style.scss";
-import PokemonCard from "../pokemon-card";
-import { PokemonList } from "../../redux/pokemons/pokemons";
-import { Row, Col } from "react-bootstrap";
-import { MyPokemons } from "../../redux/my-pokemons/my-pokemons";
 
 interface Props {
   pokemons: MyPokemons[];

@@ -5,11 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
 
+import { MyPokemons } from "../../redux/my-pokemons/my-pokemons";
+
+import { fetchPokemonData } from "../../lib/utils";
+
 import TypeCard from "../type-card";
 
+
 import "./pokemon-card.style.scss";
-import { fetchPokemonData } from "../../lib/utils";
-import { MyPokemons } from "../../redux/my-pokemons/my-pokemons";
 
 interface Props {
   pokemonData: MyPokemons;
