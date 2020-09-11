@@ -8,6 +8,7 @@ import TypeCard from "../type-card";
 
 import "./pokemon-banner.style.scss";
 import { selectCatch } from "../../redux/catch/catch.selector";
+import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
 
 interface Props {
   className?: string;
@@ -16,6 +17,8 @@ interface Props {
 const PokemonBanner: React.FC<Props> = ({ className }) => {
   const { name } = useParams();
   const pokemon = useSelector(selectPokemonByName(name));
+
+  const isCatched = useSelector(selectMyPokemonsByName(name));
 
   const catchState = useSelector(selectCatch);
 
@@ -37,7 +40,11 @@ const PokemonBanner: React.FC<Props> = ({ className }) => {
             src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails?.id}.png`}
           />
         )}
-        <div className={`pokemonBanner__pokeballContainer ${catchState.catchReady && 'pokemonBanner__pokeballContainer--catching'}`}>
+        <div
+          className={`pokemonBanner__pokeballContainer ${
+            catchState.catchReady && "pokemonBanner__pokeballContainer--catching"
+          }`}
+        >
           {catchState.catchReady && (
             <img
               className={`pokemonBanner__pokeballImage ${
@@ -51,7 +58,16 @@ const PokemonBanner: React.FC<Props> = ({ className }) => {
       </div>
 
       <span className="pokemonBanner__orderNumber">#{pokemonDetails?.order}</span>
-      <span className="pokemonBanner__name">{pokemonDetails?.name}</span>
+      <span className="pokemonBanner__name">
+        {isCatched && (
+          <img
+            className="pokemonBanner__isOwned"
+            alt=""
+            src={require("../../assets/images/pokeball.svg")}
+          />
+        )}
+        {pokemonDetails?.name}
+      </span>
       <div className="pokemonBanner__types">
         {pokemonDetails?.types.map((type, i) => (
           <TypeCard key={i} type={type.type.name} />

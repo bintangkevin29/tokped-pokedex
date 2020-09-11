@@ -11,8 +11,9 @@ import { fetchPokemonData } from "../../lib/utils";
 
 import TypeCard from "../type-card";
 
-
 import "./pokemon-card.style.scss";
+import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
+import CustomSpinner from "../custom-spinner";
 
 interface Props {
   pokemonData: MyPokemons;
@@ -27,6 +28,8 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
 
   const { pathname } = useLocation();
 
+  const isCatched = useSelector(selectMyPokemonsByName(pokemonData.name));
+
   useEffect(() => {
     const fetchPokemonDetail = async () => {
       const res = await fetchPokemonData(pokemonData.name);
@@ -38,6 +41,23 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const PokemonName = () => {
+    return (
+      <span className="pokemonCard__name">
+        {pathname === "/my-pokemons" ? pokemonData.nickname : pokemonDetails?.forms[0].name}
+        {pathname !== "/my-pokemons" && isCatched ? (
+          <img
+            className="pokemonCard__isOwned"
+            alt=""
+            src={require("../../assets/images/pokeball.svg")}
+          />
+        ) : (
+          ""
+        )}
+      </span>
+    );
+  };
+
   return (
     <Link
       to={`/details/${pokemonDetails && pokemonDetails?.name}`}
@@ -45,15 +65,13 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
         pokemonDetails ? "bg-" + pokemonDetails.types[0].type.name + "-light" : ""
       }`}
     >
-      {pokemonDetails && (
+      {pokemonDetails ? (
         <Fragment>
           <div className="pokemonCard__details">
-            <span className="pokemonCard__orderNumber">#{pokemonDetails.order}</span>
-            <span className="pokemonCard__name">
-              {pathname === "/my-pokemons" ? pokemonData.nickname : pokemonDetails.forms[0].name}
-            </span>
+            <span className="pokemonCard__orderNumber">#{pokemonDetails?.order}</span>
+            <PokemonName />
             <div className="pokemonCard__types">
-              {pokemonDetails.types.map((type, i) => (
+              {pokemonDetails?.types.map((type, i) => (
                 <TypeCard key={i} type={type.type.name} />
               ))}
             </div>
@@ -62,7 +80,7 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
             <img
               className="pokemonCard__pokemonSprite"
               alt=""
-              src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails.id}.png`}
+              src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails?.id}.png`}
             ></img>
             <img
               className="pokemonCard__backgroundImage"
@@ -71,6 +89,8 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
             />
           </div>
         </Fragment>
+      ) : (
+        <CustomSpinner />
       )}
     </Link>
   );

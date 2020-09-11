@@ -14,12 +14,15 @@ import PokemonData from "../../components/pokemon-data";
 import "./pokemon-details-page.style.scss";
 import Pokeball from "../../components/pokeball";
 import { selectCatch } from "../../redux/catch/catch.selector";
+import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();
   const { name } = useParams();
 
   const pokemonDetails = useSelector(selectPokemonByName(name));
+
+  const isCatched = useSelector(selectMyPokemonsByName(name));
 
   const catchState = useSelector(selectCatch);
 
@@ -41,7 +44,7 @@ const PokemonDetailsPage: React.FC = () => {
       {pokemonDetails ? (
         <Fragment>
           <PokemonBanner />
-          <Pokeball />
+          {!isCatched && <Pokeball />}
           {!catchState.catchReady && <PokemonData />}
         </Fragment>
       ) : (
