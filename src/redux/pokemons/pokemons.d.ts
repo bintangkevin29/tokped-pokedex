@@ -10,6 +10,7 @@ export interface PokemonList {
   owned: boolean;
   details?: PokemonDetails;
   species?: PokemonSpecies;
+  evolution?: PokemonEvolution;
 }
 
 export type PokemonActions =
