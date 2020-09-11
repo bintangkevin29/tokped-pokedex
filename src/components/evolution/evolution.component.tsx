@@ -52,7 +52,7 @@ const Evolution: React.FC = () => {
     <div className="evolution">
       {evolution?.map((evo, i) => (
         <Link to={evo.url} key={i} className="evolution__pokemon">
-          {evo.minLevel && (
+          {i > 0 && (
             <div className="evolution__arrow">
               <AiOutlineArrowDown />
             </div>

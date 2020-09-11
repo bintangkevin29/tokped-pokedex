@@ -94,7 +94,14 @@ const Pokeball: React.FC = () => {
           </div>
         </div>
       </div>
-      <Modal centered show={modalShow} onHide={() => setModalShow(false)}>
+      <Modal
+        centered
+        show={modalShow}
+        onHide={() => {
+          setModalShow(false);
+          dispatchStopCatch();
+        }}
+      >
         <Modal.Header closeButton>
           <Modal.Title>
             {catchSuccess === false ? "The Pokèmon got away!" : "You got the Pokèmon!!"}
@@ -102,7 +109,7 @@ const Pokeball: React.FC = () => {
         </Modal.Header>
         <Modal.Body>
           {catchSuccess === false ? (
-            "The Pokèmon got away!"
+            "Don't give up, Trainer. You can try again!"
           ) : (
             <Fragment>
               <Form onSubmit={addMyPokemon}>
