@@ -4,9 +4,10 @@ import "./pokemon-list.style.scss";
 import PokemonCard from "../pokemon-card";
 import { PokemonList } from "../../redux/pokemons/pokemons";
 import { Row, Col } from "react-bootstrap";
+import { MyPokemons } from "../../redux/my-pokemons/my-pokemons";
 
 interface Props {
-  pokemons: PokemonList[];
+  pokemons: MyPokemons[];
 }
 
 const PokemonLists: React.FC<Props> = ({ pokemons }) => {

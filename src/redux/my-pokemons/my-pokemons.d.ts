@@ -5,7 +5,7 @@ export interface MyPokemonState {
 }
 
 export interface MyPokemons extends PokemonList {
-  nickname: string;
+  nickname?: string;
 }
 
 export type MyPokemonsActions = {

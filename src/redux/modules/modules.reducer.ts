@@ -1,5 +1,5 @@
 import PokedexPage from "../../pages/pokedex-page";
-import BottomNav from "../../components/bottom-nav";
+import MyPokemonPage from "../../pages/my-pokemon-page";
 import PokemonDetailsPage from "../../pages/pokemon-details-page";
 
 const INIT_STATE: ModulesState = {
@@ -13,7 +13,7 @@ const INIT_STATE: ModulesState = {
       {
         name: "My Pokèmons",
         url: "/my-pokemons",
-        component: BottomNav,
+        component: MyPokemonPage,
       },
     ],
     others: [

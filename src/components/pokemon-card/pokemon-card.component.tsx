@@ -1,8 +1,6 @@
 import React, { useEffect, Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
-import { NamedApiResources } from "../../global";
 
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
@@ -11,9 +9,10 @@ import TypeCard from "../type-card";
 
 import "./pokemon-card.style.scss";
 import { fetchPokemonData } from "../../lib/utils";
+import { MyPokemons } from "../../redux/my-pokemons/my-pokemons";
 
 interface Props {
-  pokemonData: NamedApiResources;
+  pokemonData: MyPokemons;
 }
 
 const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
@@ -22,6 +21,8 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
   const pokemonDetails = pokemon?.details;
 
   const dispatch = useDispatch();
+
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const fetchPokemonDetail = async () => {
@@ -45,7 +46,9 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
         <Fragment>
           <div className="pokemonCard__details">
             <span className="pokemonCard__orderNumber">#{pokemonDetails.order}</span>
-            <span className="pokemonCard__name">{pokemonDetails.forms[0].name}</span>
+            <span className="pokemonCard__name">
+              {pathname === "/my-pokemons" ? pokemonData.nickname : pokemonDetails.forms[0].name}
+            </span>
             <div className="pokemonCard__types">
               {pokemonDetails.types.map((type, i) => (
                 <TypeCard key={i} type={type.type.name} />
