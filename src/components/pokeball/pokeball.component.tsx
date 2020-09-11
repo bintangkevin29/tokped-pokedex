@@ -1,18 +1,19 @@
 import React, { useEffect, Fragment, useState } from "react";
-
-import "./pokeball.style.scss";
+import { Modal, Form, FormControl, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useParams } from "react-router-dom";
+
 import { selectCatch } from "../../redux/catch/catch.selector";
+import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 import {
   beginCatchMode,
   beginCatching,
   stopCatching,
   stopCatchMode,
 } from "../../redux/catch/catch.actions";
-import { Modal, Form, FormControl, Button } from "react-bootstrap";
-import { useHistory, useParams } from "react-router-dom";
-import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
-import { appendMyPokemonList } from "../../redux/pokemons/pokemons.actions";
+import { appendMyPokemonList } from "../../redux/my-pokemons/my-pokemons.action";
+
+import "./pokeball.style.scss";
 
 const Pokeball: React.FC = () => {
   const dispatch = useDispatch();

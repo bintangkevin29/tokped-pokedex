@@ -18,11 +18,6 @@ const pokemonReducer = (state = INIT_STATE, action: PokemonActions): PokemonStat
         ...state,
         pokedex: insertPokemonDetails(state.pokedex, action.payload),
       };
-    case "POKEMON_MYPOKEMON_APPEND":
-      return {
-        ...state,
-        myPokemon: [...state.myPokemon, action.payload],
-      };
     default:
       return state;
   }
