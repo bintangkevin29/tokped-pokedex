@@ -5,8 +5,9 @@
   bottom: 110px;
   right: 30px;
   transition: 0.2s all ease;
+  z-index: 99;
   &--hidden {
-    right: 100vw;
+    right: 110vw;
   }
   &__imageContainer {
     position: relative;
@@ -15,6 +16,7 @@
   }
   &__image {
     animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    animation-delay: 1s;
   }
   &__catch {
     color: #fff;

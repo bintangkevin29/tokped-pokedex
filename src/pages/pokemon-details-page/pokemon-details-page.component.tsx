@@ -13,12 +13,15 @@ import PokemonData from "../../components/pokemon-data";
 
 import "./pokemon-details-page.style.scss";
 import Pokeball from "../../components/pokeball";
+import { selectCatch } from "../../redux/catch/catch.selector";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();
   const { name } = useParams();
 
   const pokemonDetails = useSelector(selectPokemonByName(name));
+
+  const catchState = useSelector(selectCatch);
 
   useEffect(() => {
     const fetchPokemonDetail = async () => {
@@ -38,8 +41,8 @@ const PokemonDetailsPage: React.FC = () => {
       {pokemonDetails ? (
         <Fragment>
           <PokemonBanner />
-          <PokemonData />
           <Pokeball />
+          {!catchState.catchReady && <PokemonData />}
         </Fragment>
       ) : (
         <CustomSpinner />

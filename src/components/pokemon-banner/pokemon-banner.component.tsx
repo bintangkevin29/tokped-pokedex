@@ -7,6 +7,7 @@ import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 import TypeCard from "../type-card";
 
 import "./pokemon-banner.style.scss";
+import { selectCatch } from "../../redux/catch/catch.selector";
 
 interface Props {
   className?: string;
@@ -16,10 +17,12 @@ const PokemonBanner: React.FC<Props> = ({ className }) => {
   const { name } = useParams();
   const pokemon = useSelector(selectPokemonByName(name));
 
+  const catchState = useSelector(selectCatch);
+
   const pokemonDetails = pokemon?.details;
 
   return (
-    <div className={`pokemonBanner bg-${pokemonDetails?.types[0].type.name}-light`}>
+    <div className={`pokemonBanner ${catchState.catchReady && 'pokemonBanner--catchMode'} bg-${pokemonDetails?.types[0].type.name}-light`}>
       {pokemonDetails && (
         <img
           className="pokemonBanner__image"

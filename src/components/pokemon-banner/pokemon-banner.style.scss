@@ -8,6 +8,11 @@
   padding: 30px;
   color: $textBlack;
   padding-bottom: 50px;
+  height: 350px;
+  transition: 0.2s all ease;
+  &--catchMode {
+    height: calc(100vh - 75px);
+  }
   &__image {
     height: 150px;
     margin-bottom: 20px;
