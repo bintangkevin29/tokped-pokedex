@@ -142,27 +142,29 @@ interface PokemonSpecies {
 
 interface PokemonEvolution {
   baby_trigger_item: NamedApiResources | null;
-  chain: {
-    evolution_details: [];
-    evolves_to: [
-      {
-        evolution_details: EvolutionDetails[];
-        evolves_to: [
-          {
-            evolution_details: EvolutionDetails[];
-            evolves_to: [];
-            is_baby: boolean;
-            species: NamedApiResources;
-          }
-        ];
-        is_baby: boolean;
-        species: NamedApiResources;
-      }
-    ];
-    is_baby: boolean;
-    species: NamedApiResources;
-  };
-  id: 1;
+  chain: EvolutionChain;
+  id: number;
+}
+
+interface EvolutionChain {
+  evolution_details: [];
+  evolves_to: [
+    {
+      evolution_details: EvolutionDetails[];
+      evolves_to: [
+        {
+          evolution_details: EvolutionDetails[];
+          evolves_to: [];
+          is_baby: boolean;
+          species: NamedApiResources;
+        }
+      ];
+      is_baby: boolean;
+      species: NamedApiResources;
+    }
+  ];
+  is_baby: boolean;
+  species: NamedApiResources;
 }
 
 interface EvolutionDetails {
