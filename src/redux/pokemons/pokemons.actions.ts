@@ -13,7 +13,7 @@ export const addPokemonDetails = (data: PokemonFetchedData): PokemonActions => (
   payload: data,
 });
 
-// export const addPokemonSpecies = (data: PokemonSpecies): PokemonActions => ({
-//   type: "POKEMON_POKEDEX_SPECIES_ADD",
-//   payload: data,
-// });
+export const appendMyPokemonList = (data: PokemonList): PokemonActions => ({
+  type: "POKEMON_MYPOKEMON_APPEND",
+  payload: data,
+});

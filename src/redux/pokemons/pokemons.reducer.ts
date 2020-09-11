@@ -3,6 +3,7 @@ import { insertPokemonDetails } from "./pokemon.utils";
 
 const INIT_STATE: PokemonState = {
   pokedex: [],
+  myPokemon: [],
 };
 
 const pokemonReducer = (state = INIT_STATE, action: PokemonActions): PokemonState => {
@@ -16,6 +17,11 @@ const pokemonReducer = (state = INIT_STATE, action: PokemonActions): PokemonStat
       return {
         ...state,
         pokedex: insertPokemonDetails(state.pokedex, action.payload),
+      };
+    case "POKEMON_MYPOKEMON_APPEND":
+      return {
+        ...state,
+        myPokemon: [...state.myPokemon, action.payload],
       };
     default:
       return state;

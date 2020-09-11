@@ -2,6 +2,7 @@ import { NamedApiResources } from "../../global";
 
 export interface PokemonState {
   pokedex: PokemonList[];
+  myPokemon: PokemonList[];
 }
 
 export interface PokemonList {
@@ -21,6 +22,10 @@ export type PokemonActions =
   | {
       type: "POKEMON_POKEDEX_DETAIL_ADD";
       payload: PokemonFetchedData;
+    }
+  | {
+      type: "POKEMON_MYPOKEMON_APPEND";
+      payload: PokemonList;
     };
 
 export interface PokemonFetchedData {
