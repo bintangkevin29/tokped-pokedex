@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
-
-import "./stats.style.scss";
 import { Row, Col, ProgressBar } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+
+import "./stats.style.scss";
 
 const Stats: React.FC = () => {
   const { name } = useParams();

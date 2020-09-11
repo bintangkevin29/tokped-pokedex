@@ -1,14 +1,17 @@
 import React, { useEffect, Fragment } from "react";
-
-import "./pokemon-details-page.style.scss";
-import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
+
+import { fetchPokemonData } from "../../lib/utils";
+
 import CustomSpinner from "../../components/custom-spinner";
 import PokemonBanner from "../../components/pokemon-banner";
 import PokemonData from "../../components/pokemon-data";
-import { fetchPokemonData } from "../../lib/utils";
+
+import "./pokemon-details-page.style.scss";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();

@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 import About from "../about";
 import Stats from "../stats";
 
-import "./pokemon-data.style.scss";
 import Evolution from "../evolution";
-import { useParams } from "react-router-dom";
+
+import "./pokemon-data.style.scss";
 
 const PokemonData: React.FC = () => {
   const { name } = useParams();
-  
+
   const [mode, setMode] = useState("about");
   const modes = ["about", "stats", "evolution"];
 

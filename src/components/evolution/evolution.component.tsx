@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
-
-import "./evolution.style.scss";
-import { useParams, Link } from "react-router-dom";
+import Axios from "axios";
 import { useSelector } from "react-redux";
+import { useParams, Link } from "react-router-dom";
+
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
 import { EvolutionChain, PokemonEvolutionNew } from "../../redux/pokemons/pokemons";
 
-import Axios from "axios";
 import { baseUrl } from "../../lib/constant";
+
+import "./evolution.style.scss";
 
 const Evolution: React.FC = () => {
   const { name } = useParams();
+
   const pokemon = useSelector(selectPokemonByName(name));
   const pokemonEvolution = pokemon?.evolution;
 
   const [evolution, setEvolution] = useState<PokemonEvolutionNew[]>([]);
 
   const addToEvolutionArray = (
-    name: string,
     evolutionChain: EvolutionChain,
     tempEvolution: PokemonEvolutionNew[] = []
   ) => {
-    
     Axios(`${baseUrl}/pokemon/${evolutionChain.species.name}`).then((res) => {
       const newObject = {
         name: evolutionChain.species.name,
@@ -34,11 +34,7 @@ const Evolution: React.FC = () => {
       tempEvolution = [...tempEvolution, newObject];
 
       if (evolutionChain.evolves_to.length > 0) {
-        addToEvolutionArray(
-          evolutionChain.evolves_to[0].species.name,
-          evolutionChain.evolves_to[0],
-          tempEvolution
-        );
+        addToEvolutionArray(evolutionChain.evolves_to[0], tempEvolution);
       } else {
         setEvolution(tempEvolution);
       }
@@ -47,11 +43,10 @@ const Evolution: React.FC = () => {
 
   useEffect(() => {
     if (pokemonEvolution) {
-      addToEvolutionArray(name, pokemonEvolution?.chain);
+      addToEvolutionArray(pokemonEvolution?.chain);
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pokemonEvolution]);
-
-  // {evolution?.map((evo) => evo.name)}
 
   return (
     <div className="evolution">
@@ -64,6 +59,7 @@ const Evolution: React.FC = () => {
           )}
           <div className="evolution__imageContainer">
             <img
+              alt=""
               className={`evolution__spritesBackground ${
                 evo.name === name && "evolution__spritesBackground--current"
               }`}

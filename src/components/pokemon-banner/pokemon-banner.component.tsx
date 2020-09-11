@@ -17,14 +17,16 @@ const PokemonBanner: React.FC<Props> = ({ className }) => {
   const pokemon = useSelector(selectPokemonByName(name));
 
   const pokemonDetails = pokemon?.details;
-  
+
   return (
     <div className={`pokemonBanner bg-${pokemonDetails?.types[0].type.name}-light`}>
-      <img
-        className="pokemonBanner__image"
-        alt=""
-        src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails?.id}.png`}
-      ></img>
+      {pokemonDetails && (
+        <img
+          className="pokemonBanner__image"
+          alt=""
+          src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails?.id}.png`}
+        />
+      )}
       <span className="pokemonBanner__orderNumber">#{pokemonDetails?.order}</span>
       <span className="pokemonBanner__name">{pokemonDetails?.name}</span>
       <div className="pokemonBanner__types">
