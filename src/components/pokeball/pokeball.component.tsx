@@ -1,7 +1,5 @@
 import React from "react";
 
-import pokeball from "../../assets/images/pokeball.svg";
-
 import "./pokeball.style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCatch } from "../../redux/catch/catch.selector";
@@ -24,7 +22,7 @@ const Pokeball: React.FC = () => {
       className={`pokeball ${catchState.catchReady && "pokeball--hidden"}`}
     >
       <div className="pokeball__imageContainer">
-        <img className="pokeball__image" alt="" src={pokeball} />
+        <img className="pokeball__image" alt="" src={require("../../assets/images/pokeball.svg")} />
         <div className={`pokeball__catch ${catchState.catchReady && "pokeball__catch--hidden"}`}>
           <div className="pokeball__catchText">Catch!</div>
         </div>
