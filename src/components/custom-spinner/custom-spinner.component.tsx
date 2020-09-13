@@ -5,7 +5,7 @@ import "./custom-spinner.style.scss";
 
 const CustomSpinner: React.FC = () => {
   return (
-    <div className="customSpinner">
+    <div className="customSpinner" data-test="customSpinner">
       <Spinner animation="border" role="status">
         <span className="sr-only">Loading...</span>
       </Spinner>
