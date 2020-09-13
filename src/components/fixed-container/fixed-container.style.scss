@@ -7,12 +7,10 @@
   bottom: 0;
   left: 0;
   position: fixed;
-
+  z-index: 99;
   &__inner {
     position: relative;
     max-width: 425px;
     width: 100%;
-    background: red;
-    height: 100px;
   }
 }

@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .pokeball {
-  position: fixed;
+  position: absolute;
   bottom: 110px;
   right: 30px;
   transition: 0.2s all ease;

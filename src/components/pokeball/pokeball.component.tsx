@@ -14,6 +14,7 @@ import {
 import { appendMyPokemonList } from "../../redux/my-pokemons/my-pokemons.action";
 
 import "./pokeball.style.scss";
+import FixedContainer from "../fixed-container";
 
 const Pokeball: React.FC = () => {
   const dispatch = useDispatch();
@@ -78,7 +79,7 @@ const Pokeball: React.FC = () => {
   }, [catchState.isCatching]);
 
   return (
-    <Fragment>
+    <FixedContainer>
       <div
         onClick={initiateCatch}
         className={`pokeball ${catchState.catchReady && "pokeball--hidden"}`}
@@ -127,7 +128,7 @@ const Pokeball: React.FC = () => {
           )}
         </Modal.Body>
       </Modal>
-    </Fragment>
+    </FixedContainer>
   );
 };
 

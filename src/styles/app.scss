@@ -4,7 +4,8 @@
 
 body {
   font-family: "Monda", "sans-serif";
-  padding-bottom: 75px;
+  padding-bottom: 50px;
+  background: rgba($color: grey, $alpha: 0.2);
 }
 
 a {
@@ -18,4 +19,16 @@ a {
     color: unset;
     text-decoration: unset;
   }
+}
+
+.App {
+  max-width: 425px;
+  width: 100%;
+  background: #fff;
+  min-height: calc(100vh - 50px);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
 }

@@ -16,7 +16,7 @@ const PokemonLists: React.FC<Props> = ({ pokemons }) => {
     <div className="pokemonList">
       <Row>
         {pokemons.map((pokemon, i) => (
-          <Col xs={12} md={6} xl={4} key={i}>
+          <Col xs={12} key={i}>
             <PokemonCard pokemonData={pokemon} />
           </Col>
         ))}
