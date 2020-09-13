@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/axios": "^0.14.0",
     "@types/bootstrap": "^4.5.0",
-    "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/node-sass": "^4.11.1",
     "@types/react": "^16.9.0",
@@ -22,6 +22,7 @@
     "@types/redux-persist": "^4.3.1",
     "@types/redux-thunk": "^2.1.0",
     "@types/reselect": "^2.2.0",
+    "D": "^1.0.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "node-sass": "^4.14.1",
@@ -59,5 +60,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "jest": "^26.4.2",
+    "jest-enzyme": "^7.1.2",
+    "@types/enzyme": "^3.10.6",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.13"
   }
 }
