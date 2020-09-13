@@ -1,0 +1,18 @@
+@import "../../styles/variables.scss";
+
+.fixedContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+
+  &__inner {
+    position: relative;
+    max-width: 425px;
+    width: 100%;
+    background: red;
+    height: 100px;
+  }
+}
