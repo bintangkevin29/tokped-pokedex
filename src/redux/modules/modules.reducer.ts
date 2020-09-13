@@ -2,7 +2,7 @@ import PokedexPage from "../../pages/pokedex-page";
 import MyPokemonPage from "../../pages/my-pokemon-page";
 import PokemonDetailsPage from "../../pages/pokemon-details-page";
 
-const INIT_STATE: ModulesState = {
+export const INIT_STATE: ModulesState = {
   modules: {
     main: [
       {

@@ -7,6 +7,7 @@ describe("Custom Spinner Component", () => {
   it("Should render", () => {
     const component = shallow(<CustomSpinner />);
     const wrapper = findByAttr(component, "customSpinner");
+    
     expect(wrapper.length).toBe(1);
   });
 });

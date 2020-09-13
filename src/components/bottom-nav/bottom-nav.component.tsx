@@ -5,8 +5,9 @@ import { useLocation, Link } from "react-router-dom";
 
 import { selectModules } from "../../redux/modules/modules.selector";
 
-import "./bottom-nav.style.scss";
 import FixedContainer from "../fixed-container";
+
+import "./bottom-nav.style.scss";
 
 const BottomNav: React.FC = () => {
   const modules = useSelector(selectModules);
@@ -15,11 +16,11 @@ const BottomNav: React.FC = () => {
 
   return (
     <FixedContainer>
-      <div className="bottomNav">
+      <div className="bottomNav" data-test="bottomNav">
         <Container fluid className="bottomNav__inner">
           <Row className="bottomNav__menu">
             {modules.main.map((module, i) => (
-              <Col xs={6} key={i}>
+              <Col data-test="bottomNav__menuItems" xs={6} key={i}>
                 <Link
                   to={module.url}
                   className={`bottomNav__menuItems ${
