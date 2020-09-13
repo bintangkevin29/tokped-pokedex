@@ -11,6 +11,7 @@
   }
   &__pokemonSprites {
     width: 150px;
+    z-index: 2;
   }
   &__level {
     font-size: 14px;
@@ -35,7 +36,7 @@
     margin: auto;
     width: 200px;
     filter: brightness(95%);
-    z-index: -2;
+    z-index: 1;
     &--current {
       filter: invert(45%) sepia(16%) saturate(2007%) hue-rotate(314deg) brightness(101%)
         contrast(113%);
