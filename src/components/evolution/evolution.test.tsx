@@ -3,7 +3,7 @@ import { ReactWrapper, mount } from "enzyme";
 import Evolution from "./evolution.component";
 import { findByAttr } from "../../lib/test-utils";
 import { MemoryRouter, Route } from "react-router-dom";
-import { MockProvider } from "../../lib/test-component";
+import { MockProvider, PokemonDetailsRoute } from "../../lib/test-component";
 
 describe("Evolution Component", () => {
   const pokemonName = "bulbasaur";
@@ -14,9 +14,9 @@ describe("Evolution Component", () => {
     component = mount(
       <MockProvider>
         <MemoryRouter initialEntries={[testUrl]}>
-          <Route path="/details/:name">
+          <PokemonDetailsRoute>
             <Evolution />
-          </Route>
+          </PokemonDetailsRoute>
         </MemoryRouter>
       </MockProvider>
     );
