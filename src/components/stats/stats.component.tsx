@@ -14,7 +14,7 @@ const Stats: React.FC = () => {
   const pokemonDetails = pokemon?.details;
 
   return (
-    <div className="stats">
+    <div className="stats" data-test="stats">
       <Row className="stats__inner">
         {pokemonDetails?.stats.map((stat, i) => (
           <Fragment key={i}>
