@@ -7,7 +7,11 @@ interface Props {
 }
 
 const TypeCard: React.FC<Props> = ({ type }) => {
-  return <div className={`typeCard bg-${type}`}>{type}</div>;
+  return (
+    <div data-test="typeCard" className={`typeCard bg-${type}`}>
+      {type}
+    </div>
+  );
 };
 
 export default TypeCard;

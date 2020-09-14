@@ -15,14 +15,16 @@ const TopBanner: React.FC = () => {
   const currentModule = modules.main.find((module) => module.url === location.pathname);
 
   return (
-    <div className="topBanner">
+    <div className="topBanner" data-test="topBanner">
       <img
         className="topBanner__backgroundImage"
         alt=""
         src={require("../../assets/images/pokemon.svg")}
       />
       <Container>
-        <span className="topBanner__title">{currentModule?.name}</span>
+        <span className="topBanner__title" data-test="topBanner__title">
+          {currentModule?.name}
+        </span>
       </Container>
     </div>
   );
