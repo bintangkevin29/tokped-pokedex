@@ -13,8 +13,12 @@ import useFetch from "./lib/use-fetch";
 import { baseUrl } from "./lib/constant";
 import { appendPokedexList } from "./redux/pokemons/pokemons.actions";
 import { stopCatchMode, stopCatching } from "./redux/catch/catch.actions";
+import { selectRootState } from "./redux/root.selector";
 
 function App() {
+  // const rootState = useSelector(selectRootState);
+  // console.log(JSON.stringify(rootState));
+
   const modules = useSelector(selectModules);
   const pokedexPokemons = useSelector(selectPokedex);
 
