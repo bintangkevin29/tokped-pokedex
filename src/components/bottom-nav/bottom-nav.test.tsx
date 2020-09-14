@@ -1,38 +1,29 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mount, ReactWrapper } from "enzyme";
 import BottomNav from "./bottom-nav.component";
 import { findByAttr, findByClassName } from "../../lib/test-utils";
 
 import { MemoryRouter } from "react-router-dom";
-
-jest.mock("react-redux", () => ({
-  useSelector: jest.fn().mockReturnValue({
-    main: [
-      {
-        name: "Pokèdex",
-        url: "/",
-      },
-      {
-        name: "My Pokèmons",
-        url: "/my-pokemons",
-      },
-    ],
-    others: [
-      {
-        name: "Pokèmon Details",
-        url: "/details/:name",
-      },
-    ],
-  }),
-}));
+import { Provider } from "react-redux";
+import store from "../../redux/store";
 
 describe("Bottom Nav Component", () => {
   const testUrl = "/";
-  const component = mount(
-    <MemoryRouter initialEntries={[testUrl]}>
-      <BottomNav />
-    </MemoryRouter>
-  );
+  let component: ReactWrapper;
+
+  beforeEach(() => {
+    component = mount(
+      <MemoryRouter initialEntries={[testUrl]}>
+        <Provider store={store}>
+          <BottomNav />
+        </Provider>
+      </MemoryRouter>
+    );
+  });
+
+  afterEach(() => {
+    component.unmount();
+  });
 
   it("Should Render", () => {
     const wrapper = findByAttr(component, "bottomNav");

@@ -10,13 +10,13 @@ import "./about.style.scss";
 
 const About: React.FC = () => {
   const { name } = useParams();
-
   const pokemon = useSelector(selectPokemonByName(name));
+
   const pokemonSpecies = pokemon?.species;
   const pokemonDetails = pokemon?.details;
 
   return (
-    <div className="about">
+    <div className="about" data-test="about">
       <span className="about__description">
         "{pokemonSpecies?.flavor_text_entries[0].flavor_text}"
       </span>
