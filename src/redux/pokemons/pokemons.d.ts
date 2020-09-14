@@ -40,7 +40,7 @@ export interface PokemonDetails {
 
   game_indices: {
     game_index: number;
-    version: NamedApiResources[];
+    version: NamedApiResources;
   }[];
   height: number;
   held_items: [];
@@ -49,7 +49,7 @@ export interface PokemonDetails {
   is_default: boolean;
   location_area_encounters: string;
   moves: {
-    move: NamedApiResources[];
+    move: NamedApiResources;
     version_group_details: {
       level_learned_at: number;
       move_learn_method: NamedApiResources;
@@ -63,20 +63,20 @@ export interface PokemonDetails {
 
   sprites: {
     back_default: string;
-    back_female: string;
-    back_shiny: string;
-    back_shiny_female: string;
-    front_default: string;
-    front_female: string;
-    front_shiny: string;
-    front_shiny_female: string;
+    back_female: string | null;
+    back_shiny: string | null;
+    back_shiny_female: string | null;
+    front_default: string | null;
+    front_female: string | null;
+    front_shiny: string | null;
+    front_shiny_female: string | null;
     other: {
       dream_world: {
-        front_default: string;
-        front_female: string;
+        front_default: string | null;
+        front_female: string | null;
       };
       official_artwork: {
-        front_default: string;
+        front_default: string | null;
       };
     };
   };
