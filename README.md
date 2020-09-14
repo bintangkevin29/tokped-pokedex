@@ -2,7 +2,7 @@
 
 ### Summary
 
-This is the test case for [Tokopedia](https://www.tokopedia.com/) recruitment process. The web app was built using React library using [Create React App](https://github.com/facebook/create-react-app) with [Typescript](https://www.typescriptlang.org/) boilerplate. This web app utilize custom hook for fetching and memoize hook to keep the web app from re-fetching existing data.
+This is the test case for [Tokopedia](https://www.tokopedia.com/) recruitment process. The web app was built using React library using [Create React App](https://github.com/facebook/create-react-app) with [Typescript](https://www.typescriptlang.org/) boilerplate.
 
 ### Live Demo
 
