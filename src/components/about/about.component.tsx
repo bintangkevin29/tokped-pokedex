@@ -25,7 +25,7 @@ const About: React.FC = () => {
         <tbody>
           <tr>
             <td className="about__dataName">Shape</td>
-            <td className="about__dataDescription">{pokemonSpecies?.shape.name}</td>
+            <td className="about__dataDescription" data-test='about__shape'>{pokemonSpecies?.shape.name}</td>
           </tr>
           <tr>
             <td className="about__dataName">Height</td>

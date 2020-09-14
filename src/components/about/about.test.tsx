@@ -30,4 +30,9 @@ describe("About Component", () => {
     const wrapper = findByAttr(component, "about");
     expect(wrapper.hostNodes().length).toBe(1);
   });
+
+  it("Should print Pokèmon shape correctly from Redux", () => {
+    const wrapper = findByAttr(component, "about__shape");
+    expect(wrapper.hostNodes().text()).toBe("quadruped");
+  });
 });
