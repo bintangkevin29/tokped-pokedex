@@ -3,17 +3,19 @@ import { useSelector, useDispatch } from "react-redux";
 import { Route, useLocation, useHistory } from "react-router-dom";
 
 import { selectModules } from "./redux/modules/modules.selector";
+import { selectPokedex } from "./redux/pokemons/pokemons.selector";
+import { appendPokedexList } from "./redux/pokemons/pokemons.actions";
+import { stopCatchMode, stopCatching } from "./redux/catch/catch.actions";
+// import { selectRootState } from "./redux/root.selector";
+
+import { baseUrl } from "./lib/constant";
+import useFetch from "./lib/use-fetch";
 
 import BottomNav from "./components/bottom-nav";
 import TopBanner from "./components/top-banner";
 
+
 import "./styles/app.scss";
-import { selectPokedex } from "./redux/pokemons/pokemons.selector";
-import useFetch from "./lib/use-fetch";
-import { baseUrl } from "./lib/constant";
-import { appendPokedexList } from "./redux/pokemons/pokemons.actions";
-import { stopCatchMode, stopCatching } from "./redux/catch/catch.actions";
-// import { selectRootState } from "./redux/root.selector";
 
 function App() {
   // const rootState = useSelector(selectRootState);

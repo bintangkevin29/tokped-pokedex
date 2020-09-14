@@ -1,20 +1,22 @@
 import React, { useEffect, Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
+import { selectCatch } from "../../redux/catch/catch.selector";
 import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
 
-import { fetchPokemonData } from "../../lib/utils";
+import { fetchPokemonData, capitalizeFirstLetter } from "../../lib/utils";
 
 import CustomSpinner from "../../components/custom-spinner";
 import PokemonBanner from "../../components/pokemon-banner";
 import PokemonData from "../../components/pokemon-data";
 
-import "./pokemon-details-page.style.scss";
 import Pokeball from "../../components/pokeball";
-import { selectCatch } from "../../redux/catch/catch.selector";
-import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
+
+import "./pokemon-details-page.style.scss";
 
 const PokemonDetailsPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -41,6 +43,9 @@ const PokemonDetailsPage: React.FC = () => {
 
   return (
     <div className="pokemonDetailsPage">
+      <Helmet>
+        <title>{capitalizeFirstLetter(name)} &ndash; Pokèdex</title>
+      </Helmet>
       {pokemonDetails ? (
         <Fragment>
           <PokemonBanner />
