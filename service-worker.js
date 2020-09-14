@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tokped-pokedex/precache-manifest.799115062fb4b241afbae2c5ebfc472c.js"
+  "/tokped-pokedex/precache-manifest.15bae114843ba8624090586df5b7f727.js"
 );
 
 self.addEventListener('message', (event) => {

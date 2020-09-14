@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "54ed43246a4baa11b5886e11e94ed99c",
+    "revision": "8bc58ae34ffbee4b6085bcacb4568e3a",
     "url": "/tokped-pokedex/index.html"
   },
   {
-    "revision": "ca6ab9ef11377bafa97a",
-    "url": "/tokped-pokedex/static/css/main.5f9587f6.chunk.css"
+    "revision": "0e4b916fc8a8e0697e8b",
+    "url": "/tokped-pokedex/static/css/main.21b3bfff.chunk.css"
   },
   {
-    "revision": "5046398d1b6bf8e547de",
-    "url": "/tokped-pokedex/static/js/2.5aa72bfc.chunk.js"
+    "revision": "60a03fff03885b2aee77",
+    "url": "/tokped-pokedex/static/js/2.40f44dce.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/tokped-pokedex/static/js/2.5aa72bfc.chunk.js.LICENSE.txt"
+    "url": "/tokped-pokedex/static/js/2.40f44dce.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ca6ab9ef11377bafa97a",
-    "url": "/tokped-pokedex/static/js/main.4d95cc9d.chunk.js"
+    "revision": "0e4b916fc8a8e0697e8b",
+    "url": "/tokped-pokedex/static/js/main.1ab7146a.chunk.js"
   },
   {
     "revision": "5c8ad9ec725c3defd55a",
