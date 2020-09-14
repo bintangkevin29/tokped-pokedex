@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactWrapper, shallow, ShallowWrapper } from "enzyme";
+import { shallow, ShallowWrapper } from "enzyme";
 import FixedContainer from "./fixed-container.component";
 import { findByAttr } from "../../lib/test-utils";
 
