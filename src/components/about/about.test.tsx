@@ -3,8 +3,7 @@ import { mount, ReactWrapper } from "enzyme";
 import About from "./about.component";
 import { findByAttr } from "../../lib/test-utils";
 import { MemoryRouter, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "../../redux/store";
+import { MockProvider } from "../../lib/test-component";
 
 describe("About Component", () => {
   const pokemonName = "bulbasaur";
@@ -13,13 +12,13 @@ describe("About Component", () => {
   let component: ReactWrapper;
   beforeEach(() => {
     component = mount(
-      <Provider store={store}>
+      <MockProvider>
         <MemoryRouter initialEntries={[testUrl]}>
           <Route path="/details/:name">
             <About />
           </Route>
         </MemoryRouter>
-      </Provider>
+      </MockProvider>
     );
   });
 

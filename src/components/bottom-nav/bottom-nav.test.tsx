@@ -6,6 +6,7 @@ import { findByAttr, findByClassName } from "../../lib/test-utils";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../../redux/store";
+import { MockProvider } from "../../lib/test-component";
 
 describe("Bottom Nav Component", () => {
   const testUrl = "/";
@@ -14,9 +15,9 @@ describe("Bottom Nav Component", () => {
   beforeEach(() => {
     component = mount(
       <MemoryRouter initialEntries={[testUrl]}>
-        <Provider store={store}>
+        <MockProvider>
           <BottomNav />
-        </Provider>
+        </MockProvider>
       </MemoryRouter>
     );
   });
