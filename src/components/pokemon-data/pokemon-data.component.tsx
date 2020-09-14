@@ -20,7 +20,7 @@ const PokemonData: React.FC = () => {
   }, [name]);
 
   return (
-    <div className="pokemonData">
+    <div className="pokemonData" data-test="pokemonData">
       <Container>
         <div className="pokemonData__nav">
           {modes.map((m, i) => (

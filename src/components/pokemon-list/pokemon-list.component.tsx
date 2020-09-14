@@ -13,7 +13,7 @@ interface Props {
 
 const PokemonLists: React.FC<Props> = ({ pokemons }) => {
   return (
-    <div className="pokemonList">
+    <div className="pokemonList" data-test="pokemonList">
       <Row>
         {pokemons.map((pokemon, i) => (
           <Col xs={12} key={i}>
