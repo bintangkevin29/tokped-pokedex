@@ -3,17 +3,16 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
 import { addPokemonDetails } from "../../redux/pokemons/pokemons.actions";
-
 import { MyPokemons } from "../../redux/my-pokemons/my-pokemons";
 
 import { fetchPokemonData } from "../../lib/utils";
 
 import TypeCard from "../type-card";
+import CustomSpinner from "../custom-spinner";
 
 import "./pokemon-card.style.scss";
-import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
-import CustomSpinner from "../custom-spinner";
 
 interface Props {
   pokemonData: MyPokemons;

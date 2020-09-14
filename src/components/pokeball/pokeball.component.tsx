@@ -13,8 +13,9 @@ import {
 } from "../../redux/catch/catch.actions";
 import { appendMyPokemonList } from "../../redux/my-pokemons/my-pokemons.action";
 
-import "./pokeball.style.scss";
 import FixedContainer from "../fixed-container";
+
+import "./pokeball.style.scss";
 
 const Pokeball: React.FC = () => {
   const dispatch = useDispatch();

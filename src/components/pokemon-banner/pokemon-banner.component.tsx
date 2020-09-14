@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { selectPokemonByName } from "../../redux/pokemons/pokemons.selector";
+import { selectCatch } from "../../redux/catch/catch.selector";
+import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
 
 import TypeCard from "../type-card";
 
 import "./pokemon-banner.style.scss";
-import { selectCatch } from "../../redux/catch/catch.selector";
-import { selectMyPokemonsByName } from "../../redux/my-pokemons/my-pokemons.selector";
 
 interface Props {
   className?: string;
