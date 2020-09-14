@@ -83,6 +83,7 @@ const Pokeball: React.FC = () => {
       <div
         onClick={initiateCatch}
         className={`pokeball ${catchState.catchReady && "pokeball--hidden"}`}
+        data-test="pokeball"
       >
         <div className="pokeball__imageContainer">
           <img
