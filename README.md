@@ -30,7 +30,7 @@ or
 
     npm run start
 
-##### 3. Run Test (Optional)
+##### 4. Run Test (Optional)
 
     yarn test
 
