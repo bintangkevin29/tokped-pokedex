@@ -43,7 +43,7 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
 
   const PokemonName = () => {
     return (
-      <span className="pokemonCard__name">
+      <span className="pokemonCard__name" data-test="pokemonCard__name">
         {pathname === "/my-pokemons" ? pokemonData.nickname : pokemonDetails?.forms[0].name}
         {pathname !== "/my-pokemons" && isCatched ? (
           <img
@@ -61,6 +61,7 @@ const PokemonCard: React.FC<Props> = ({ pokemonData }) => {
   return (
     <Link
       to={`/details/${pokemonDetails && pokemonDetails?.name}`}
+      data-test="pokemonCard"
       className={`pokemonCard ${
         pokemonDetails ? "bg-" + pokemonDetails.types[0].type.name + "-light" : ""
       }`}
