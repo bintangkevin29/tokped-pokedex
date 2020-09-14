@@ -9,6 +9,9 @@ describe("Fixed Container Component", () => {
   beforeEach(() => {
     component = shallow(<FixedContainer>{childrenTest}</FixedContainer>);
   });
+  afterEach(() => {
+    component.unmount();
+  });
   it("Should Render", () => {
     const wrapper = findByAttr(component, "fixedContainer");
     expect(wrapper.hostNodes().length).toBe(1);
