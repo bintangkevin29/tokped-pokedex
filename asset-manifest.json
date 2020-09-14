@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/tokped-pokedex/static/css/main.5f9587f6.chunk.css",
+    "main.js": "/tokped-pokedex/static/js/main.4d95cc9d.chunk.js",
+    "main.js.map": "/tokped-pokedex/static/js/main.4d95cc9d.chunk.js.map",
+    "runtime-main.js": "/tokped-pokedex/static/js/runtime-main.9c7b9862.js",
+    "runtime-main.js.map": "/tokped-pokedex/static/js/runtime-main.9c7b9862.js.map",
+    "static/js/2.5aa72bfc.chunk.js": "/tokped-pokedex/static/js/2.5aa72bfc.chunk.js",
+    "static/js/2.5aa72bfc.chunk.js.map": "/tokped-pokedex/static/js/2.5aa72bfc.chunk.js.map",
+    "index.html": "/tokped-pokedex/index.html",
+    "precache-manifest.799115062fb4b241afbae2c5ebfc472c.js": "/tokped-pokedex/precache-manifest.799115062fb4b241afbae2c5ebfc472c.js",
+    "service-worker.js": "/tokped-pokedex/service-worker.js",
+    "static/css/main.5f9587f6.chunk.css.map": "/tokped-pokedex/static/css/main.5f9587f6.chunk.css.map",
+    "static/js/2.5aa72bfc.chunk.js.LICENSE.txt": "/tokped-pokedex/static/js/2.5aa72bfc.chunk.js.LICENSE.txt",
+    "static/media/app.scss": "/tokped-pokedex/static/media/monda-v10-latin-regular.fef37e30.svg",
+    "static/media/pokeball.svg": "/tokped-pokedex/static/media/pokeball.6b4ffa55.svg",
+    "static/media/pokemon.svg": "/tokped-pokedex/static/media/pokemon.254d58d1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c7b9862.js",
+    "static/js/2.5aa72bfc.chunk.js",
+    "static/css/main.5f9587f6.chunk.css",
+    "static/js/main.4d95cc9d.chunk.js"
+  ]
+}
