@@ -1,4 +1,13 @@
 @import "../../styles/variables.scss";
 
 .pokemonList {
+  &__warning {
+    text-align: center;
+    width: 100%;
+    color: $textBlack;
+    padding: 20px;
+    a {
+      color: $colorPrimary;
+    }
+  }
 }
