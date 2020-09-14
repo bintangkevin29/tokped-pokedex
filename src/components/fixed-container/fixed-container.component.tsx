@@ -9,8 +9,10 @@ interface Props {
 
 const FixedContainer: React.FC<Props> = ({ children, className }) => {
   return (
-    <div className={`fixedContainer ${className}`}>
-      <div className="fixedContainer__inner">{children}</div>
+    <div className={`fixedContainer ${className}`} data-test="fixedContainer">
+      <div className="fixedContainer__inner" data-test="fixedContainer__inner">
+        {children}
+      </div>
     </div>
   );
 };
