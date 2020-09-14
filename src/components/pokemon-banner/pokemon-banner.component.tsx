@@ -29,6 +29,7 @@ const PokemonBanner: React.FC<Props> = ({ className }) => {
       className={`pokemonBanner ${catchState.catchReady && "pokemonBanner--catchMode"} bg-${
         pokemonDetails?.types[0].type.name
       }-light`}
+      data-test="pokemonBanner"
     >
       <div className="pokemonBanner__imageContainer">
         {pokemonDetails && (
@@ -57,8 +58,10 @@ const PokemonBanner: React.FC<Props> = ({ className }) => {
         </div>
       </div>
 
-      <span className="pokemonBanner__orderNumber">#{pokemonDetails?.order}</span>
-      <span className="pokemonBanner__name">
+      <span className="pokemonBanner__orderNumber" data-test="pokemonBanner__orderNumber">
+        #{pokemonDetails?.order}
+      </span>
+      <span className="pokemonBanner__name" data-test="pokemonBanner__name">
         {isCatched && (
           <img
             className="pokemonBanner__isOwned"
